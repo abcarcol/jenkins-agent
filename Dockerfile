@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Abel Carrion <abcarcol@gmail.com> based on bibinwilson/jenkins-docker-slave Bibin Wilson <bibinwilsonn@gmail.com>
 
 # Make sure the package repository is up to date.
@@ -19,9 +19,8 @@ RUN adduser --quiet jenkins
 RUN echo "jenkins:jenkins" | chpasswd
 
 #Install python3.6 and pip3
-RUN apt-get install -y python3.6 &&\
-    apt-get install -y python3-pip &&\
-
+RUN apt-get install -y python3.6 
+RUN apt-get install -y python3-pip
 
 # Standard SSH port
 EXPOSE 22
